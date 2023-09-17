@@ -1,0 +1,69 @@
+*, *::after, *::before{
+    padding: 0;
+    margin: 0;
+    box-sizing:border-box;
+}
+
+:root{
+    --bg-color:#111;
+    --main-color:#fafafa;
+    --padding:10px;
+    --round:6px;
+    --shadow:rgba(192, 191, 191, 0.6);
+    --unp-color:#324E6D;
+}
+
+body{
+    background: linear-gradient(180deg, rgb(44, 48, 49) 0%, rgb(38, 41, 42) 48%, var(--bg-color) 100%);
+    background-repeat: no-repeat;
+    background-color: var(--bg-color);
+    font-family: 'Lato', sans-serif;
+}
+
+img{
+    width: 55%;
+}
+
+h1, h3{
+    color: var(--main-color);
+    margin-bottom: var(--padding);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+h1{
+    font-size: 1.5rem;
+}
+
+h3{
+    font-size: 1.1rem;
+}
+
+.container{
+    margin: 0 auto;
+    margin-top: var(--padding);
+    width: 100%;
+    max-width: 1024px;
+    padding: var(--padding);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.logo{
+    max-width: 200px;
+}
+
+.radio__container{
+    display: flex;
+    width: 90%;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 350px;
+    padding: var(--padding);
+    border: solid 4px var(--main-color);
+    border-radius: var(--round);
+    box-shadow: 1px 2px 15px var(--shadow);
+    background-color:var(--unp-color);
+}

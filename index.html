@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <link href="assets/images/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
+    <script src="assets/js/app.js" defer></script>
     <title>Radio Universidad</title>
 </head>
 <body>
@@ -17,7 +18,8 @@
             <img class="logo" alt="logo universidad" src="assets/images/logo.png">
             <h1>Radio Universidad</h1>
             <h3>En vivo</h3>
-            <audio autoplay controls src="http://170.210.88.9:7130/;stream.mp3"></audio>
+            <audio id="radioPlayer"></audio>
+            <button id="radio">Reproducir</button>
         </div>
     </div>
 </body>

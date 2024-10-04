@@ -1,0 +1,22 @@
+{
+    "short_name": "Radio UNPSJB",
+    "name": "Radio Universidad",
+    "theme_color": "#00518C",
+    "display": "standalone",
+    "background_color": "#00518C",
+    "start_url": "/",
+    "scope": "/",
+    "description": "Servicio para escucar la radio de la Universidad online",
+    "icons": [
+        {
+            "src": "assets/images/analiticos-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "assets/images/analiticos-1024.png",
+            "sizes": "1024x1024",
+            "type": "image/png"
+        }
+    ]
+}

@@ -61,6 +61,8 @@ button{
     overflow: hidden;
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .logo{
@@ -70,13 +72,26 @@ button{
 .radio__container{
     display: flex;
     width: 90%;
+    background-color:var(--unp-color);
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     min-height: 350px;
     padding: var(--padding);
     border: solid 4px var(--main-color);
-    border-radius: var(--round);
+    border-radius: var(--round);   
+}
+
+.shadow{
     box-shadow: 1px 2px 15px var(--shadow);
-    background-color:var(--unp-color);
+  
+}
+
+.status {
+    width: 90%;
+    padding: 10px;
+    text-align: center;
+    color: var(--unp-color);
+    margin-top: 10px;
+    border-radius: var(--round);
 }

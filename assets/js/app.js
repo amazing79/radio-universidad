@@ -4,9 +4,10 @@ const NOT_LOADED = 'not-loaded';
 const LOADED  = 'loaded';
 const PLAY = 'REPRODUCIR';
 const PAUSE = 'PAUSAR';
+const INFO = 'Status: ';
 const RADIO_URL = 'http://radiouniversidad.unp.edu.ar:7130/;stream.mp3';
 const STATUS = { PLAYING, PAUSED, LOADED, NOT_LOADED};
-const LABELS = {PLAY, PAUSE}
+const LABELS = {PLAY, PAUSE, INFO}
 
 function handlePlayEvent(evt)
 {
@@ -37,12 +38,56 @@ function handlePlayEvent(evt)
     sessionStorage.setItem('status', actualStatus);
 }
 
+function handleStalled(evt)
+{
+    let status = document.getElementById('audioStatus');
+    status.innerHTML = ` ${LABELS.INFO} Ocurrio un error al obtener el stream`;
+   
+}
+
+function handleSuspend(evt)
+{
+    let status = document.getElementById('audioStatus');
+    status.innerHTML = `${LABELS.INFO} la trasmision se ha suspendido. Intente mas tarde`;
+}
+
+function handleWaiting(evt)
+{
+    let status = document.getElementById('audioStatus');
+    status.innerHTML = `${LABELS.INFO} esperando data del stream`;
+}
+
+function handlePlaying(evt)
+{
+    let status = document.getElementById('audioStatus');
+    status.innerHTML = `${LABELS.INFO} disfrutando la musica!`;
+}
+
+function handlePause(evt)
+{
+    let status = document.getElementById('audioStatus');
+    status.innerHTML = `${LABELS.INFO} se ha pausado la reproducción!`;
+}
+
+
+
+function setListeningEvents(audio)
+{
+    audio.addEventListener('stalled', handleStalled);
+    audio.addEventListener('suspend', handleSuspend);
+    audio.addEventListener('waiting', handleWaiting)
+    audio.addEventListener("playing", handlePlaying);
+    audio.addEventListener("pause", handlePause);
+}
+
 function init()
 {
     sessionStorage.setItem('status', STATUS.PAUSED) ;
     sessionStorage.setItem('loaded', STATUS.NOT_LOADED);
     let radio = document.getElementById('radio');
     radio.addEventListener('click',  handlePlayEvent);
+    let player = document.getElementById('radioPlayer');
+    setListeningEvents(player);
 }
 
 window.onload = init;
